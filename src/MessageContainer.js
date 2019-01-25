@@ -119,9 +119,9 @@ export default class MessageContainer extends React.PureComponent {
   keyExtractor = (item) => `${item._id}`
 
   render() {
-    if (this.props.messages.length === 0) {
-      return <View style={styles.container} />;
-    }
+    // if (this.props.messages.length === 0) {
+    //   return <View style={styles.container} />;
+    // }
     return (
       <View style={styles.container}>
         <FlatList
