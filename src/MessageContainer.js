@@ -123,7 +123,7 @@ export default class MessageContainer extends React.PureComponent {
     //   return <View style={styles.container} />;
     // }
     return (
-      <View style={styles.container}>
+      <View style={this.props.alignTop ? styles.containerAlignTop : styles.container}>
         <FlatList
           ref={(ref) => (this.flatListRef = ref)}
           extraData={this.props.extraData}
@@ -150,6 +150,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  containerAlignTop: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+  },
   contentContainerStyle: {
     justifyContent: 'flex-end',
   },
@@ -172,6 +176,7 @@ MessageContainer.defaultProps = {
   listViewProps: {},
   invertibleScrollViewProps: {}, // TODO: support or not?
   extraData: null,
+  alignTop: false,
 };
 
 MessageContainer.propTypes = {
@@ -186,4 +191,5 @@ MessageContainer.propTypes = {
   loadEarlier: PropTypes.bool,
   invertibleScrollViewProps: PropTypes.object, // TODO: support or not?
   extraData: PropTypes.object,
+  alignTop: PropTypes.bool,
 };

@@ -622,6 +622,7 @@ GiftedChat.propTypes = {
   extraData: PropTypes.object,
   minComposerHeight: PropTypes.number,
   maxComposerHeight: PropTypes.number,
+  alignTop: PropTypes.bool,
 };
 
 export {
